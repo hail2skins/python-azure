@@ -13,7 +13,8 @@ from decouple import config
 credential = DefaultAzureCredential()
 
 # Retrieve a subscription_id from environment variables using python-decouple
-subscription_id = config('AZURE_SANDBOX_SUBSCRIPTION_ID')
+#subscription_id = config('AZURE_SANDBOX_SUBSCRIPTION_ID') # Sandbox subscription
+subscription_id = config('DSNONPROD_SUBSCRIPTION_ID') # DSNONPROD subscription
 
 # Obtain the managggement object for resources
 resource_client = ResourceManagementClient(credential=credential, subscription_id=subscription_id)
